@@ -1,10 +1,12 @@
-let newArr = [];
+import data from "/data.json" assert { type: "json" };
+let subtitle = document.querySelector(".subtitle");
+let setData = [];
 
-let data = fetch("./data.json")
-  .then((response) => response.json())
-  .then((json) =>
-    json.forEach((element) => {
-      newArr.push(element);
-    })
-  );
-console.log(newArr);
+for (let [i, time] of data.entries(data)) {
+  setData.push(time);
+}
+let neArr = [];
+setData.forEach((el) => {
+  neArr.push(el.title);
+  subtitle.textContent = `${el.title}`;
+});
