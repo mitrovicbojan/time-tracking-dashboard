@@ -1,12 +1,15 @@
-import data from "/data.json" assert { type: "json" };
-let subtitle = document.querySelector(".subtitle");
-let setData = [];
+// import data from "/data.json" assert { type: "json" };
+// let subtitle = document.querySelector(".box");
+// let setData = [];
 
-for (let [i, time] of data.entries(data)) {
-  setData.push(time);
+// for (let [i, time] of data.entries(data)) {
+//   setData.push(time);
+// }
+// const titlesArr = setData.map((title) => title.title);
+
+async function timeTrackingData() {
+  const response = await fetch("/data.json");
+  const data = await response.json();
+  console.log(data);
 }
-let neArr = [];
-setData.forEach((el) => {
-  neArr.push(el.title);
-  subtitle.textContent = `${el.title}`;
-});
+timeTrackingData();
