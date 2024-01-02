@@ -11,5 +11,14 @@ async function timeTrackingData() {
   const response = await fetch("/data.json");
   const data = await response.json();
   console.log(data);
+
+  const titleArr = [];
+  const timeFrames = [];
+  for (let i of data) {
+    titleArr.push(i.title);
+    timeFrames.push(i.timeframes);
+  }
+  console.log(timeFrames);
 }
-timeTrackingData();
+const timeTracking = timeTrackingData();
+console.log(timeTracking);
