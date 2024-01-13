@@ -19,6 +19,15 @@ async function timeTrackingData() {
     timeFrames.push(i.timeframes);
   }
   console.log(timeFrames);
+
+  const btnDay = document.querySelector(".btn");
+
+  btnDay.addEventListener("click", function () {
+    const titleDiv = document.querySelectorAll(".subtitle");
+    console.log(titleDiv);
+    console.log(titleArr.map((title) => title));
+
+    titleDiv.forEach((item, i) => (item.textContent = titleArr[i]));
+  });
 }
-const timeTracking = timeTrackingData();
-console.log(timeTracking);
+timeTrackingData();
