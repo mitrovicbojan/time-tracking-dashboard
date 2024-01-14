@@ -21,13 +21,19 @@ async function timeTrackingData() {
   console.log(timeFrames);
 
   const btnDay = document.querySelector(".btn");
+  const titleDiv = document.querySelectorAll(".subtitle");
+  const currDiv = document.querySelectorAll(".curr");
+  const prevDiv = document.querySelectorAll(".previous");
+  titleDiv.forEach((item, i) => (item.textContent = titleArr[i]));
 
   btnDay.addEventListener("click", function () {
-    const titleDiv = document.querySelectorAll(".subtitle");
-    console.log(titleDiv);
-    console.log(titleArr.map((title) => title));
+    const curArr = timeFrames.map((current) => current.daily.current);
+    const prevArr = timeFrames.map((current) => current.daily.previous);
 
-    titleDiv.forEach((item, i) => (item.textContent = titleArr[i]));
+    currDiv.forEach((item, i) => (item.textContent = `${curArr[i]}hrs`));
+    prevDiv.forEach(
+      (item, i) => (item.textContent = `PREVIOUS - ${prevArr[i]}hrs`)
+    );
   });
 }
 timeTrackingData();
