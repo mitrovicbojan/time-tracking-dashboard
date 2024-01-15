@@ -38,3 +38,6 @@ main > article img {
 main > article:nth-child(1) {
   grid-row: span 2;
 }
+.btnMonth {
+  text-transform: capitalize;
+}
