@@ -85,3 +85,16 @@ article a:hover {
   color: rgb(255, 255, 255);
   font-weight: 400;
 }
+.subtitle,
+.curr,
+.previous {
+  color: rgb(255, 255, 255);
+}
+
+.work-icon {
+  background-color: var(--light-red-work);
+  height: auto;
+}
+.box {
+  background-color: var(--dark-blue);
+}
