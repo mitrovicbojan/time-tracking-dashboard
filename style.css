@@ -19,8 +19,6 @@ body {
   margin: 0;
   padding: 0;
   font-family: "Rubik", sans-serif;
-  display: flex;
-  justify-content: center;
   background-color: var(--very-dark-blue);
 }
 main {
@@ -28,19 +26,13 @@ main {
   max-width: 1024px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
-  margin-top: 150px;
+  margin: 50px auto;
 }
 /* main > article {
   border: 1px solid var(--violet-social);
 } */
-main > article img {
-  max-width: 100%;
-}
 main > article:nth-child(1) {
   grid-row: span 2;
-}
-.btnMonth {
-  text-transform: capitalize;
 }
 
 article {
@@ -65,11 +57,12 @@ article a:hover {
 .profile {
   background-color: var(--blue);
   border-radius: 10px;
-  height: 25rem;
+  height: 310px;
   padding-top: 2rem;
   padding-left: 1rem;
   display: flex;
   flex-direction: column;
+  margin-bottom: 50px;
 }
 
 .profile-img {
@@ -84,17 +77,38 @@ article a:hover {
   font-size: 2.2rem;
   color: rgb(255, 255, 255);
   font-weight: 400;
+  margin-top: 0;
 }
 .subtitle,
 .curr,
 .previous {
   color: rgb(255, 255, 255);
 }
-
-.work-icon {
+.card {
   background-color: var(--light-red-work);
-  height: auto;
+}
+.work-card {
+  width: 100%;
+  height: 70px;
+  background-color: var(--light-red-work);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.work-icon {
+  float: right;
 }
 .box {
   background-color: var(--dark-blue);
+  border-radius: 10px;
+  height: auto;
+}
+.title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+.dots-icon {
+  height: 5px;
+  cursor: pointer;
 }
