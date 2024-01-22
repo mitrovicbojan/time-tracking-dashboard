@@ -26,38 +26,69 @@ async function timeTrackingData() {
   const titleDiv = document.querySelectorAll(".subtitle");
   const currDiv = document.querySelectorAll(".curr");
   const prevDiv = document.querySelectorAll(".previous");
-  titleDiv.forEach((item, i) => (item.textContent = titleArr[i]));
+  const activeCl = document.querySelector("article").querySelectorAll("a");
 
-  btnDay.addEventListener("click", function () {
-    const curArr = timeFrames.map((current) => current.daily.current);
-    const prevArr = timeFrames.map((current) => current.daily.previous);
-
-    currDiv.forEach((item, i) => (item.textContent = `${curArr[i]}hrs`));
-    prevDiv.forEach(
-      (item, i) => (item.textContent = `PREVIOUS - ${prevArr[i]}hrs`)
-    );
+  //add active class to a tags
+  activeCl.forEach((item) => {
+    item.addEventListener("click", function () {
+      activeCl.forEach((el) => el.classList.remove("active"));
+      this.classList.add("active");
+    });
   });
-  btnWeek.addEventListener("click", function () {
-    const curArr = timeFrames.map((current) => current.weekly.current);
-    const prevArr = timeFrames.map((current) => current.weekly.previous);
-
-    currDiv.forEach((item, i) => (item.textContent = `${curArr[i]}hrs`));
-    prevDiv.forEach(
-      (item, i) => (item.textContent = `PREVIOUS - ${prevArr[i]}hrs`)
-    );
+  // titleDiv.forEach((item, i) => (item.textContent = titleArr[i]));
+  const mapa = data.map((el) => el.title);
+  titleDiv.forEach((item, i) => {
+    item.textContent = mapa[i];
   });
-  btnMonth.addEventListener("click", function (e) {
-    console.log(e.target.textContent);
-    // const clickedBtn = e.target.textContent;
-    // console.log(clickedBtn.toLowerCase());
 
-    const curArr = timeFrames.map((current) => current.monthly.current);
-    const prevArr = timeFrames.map((current) => current.monthly.previous);
+  activeCl.forEach((el) => {
+    el.addEventListener("click", function (e) {
+      const timePeriod = e.target.textContent;
 
-    currDiv.forEach((item, i) => (item.textContent = `${curArr[i]}hrs`));
-    prevDiv.forEach(
-      (item, i) => (item.textContent = `PREVIOUS - ${prevArr[i]}hrs`)
-    );
+      const timesCurr = data.map((time) => {
+        return time.timeframes[timePeriod].current;
+      });
+      const timesPrev = data.map((time) => {
+        return time.timeframes[timePeriod].previous;
+      });
+
+      currDiv.forEach((item, i) => (item.textContent = `${timesCurr[i]}hrs`));
+      prevDiv.forEach(
+        (item, i) => (item.textContent = `PREVIOUS - ${timesPrev[i]}hrs`)
+      );
+    });
   });
+
+  // btnDay.addEventListener("click", function () {
+  //   const curArr = timeFrames.map((current) => current.daily.current);
+  //   const prevArr = timeFrames.map((current) => current.daily.previous);
+
+  //   currDiv.forEach((item, i) => (item.textContent = `${curArr[i]}hrs`));
+  //   prevDiv.forEach(
+  //     (item, i) => (item.textContent = `PREVIOUS - ${prevArr[i]}hrs`)
+  //   );
+  // });
+  // btnWeek.addEventListener("click", function () {
+  //   const curArr = timeFrames.map((current) => current.weekly.current);
+  //   const prevArr = timeFrames.map((current) => current.weekly.previous);
+
+  //   currDiv.forEach((item, i) => (item.textContent = `${curArr[i]}hrs`));
+  //   prevDiv.forEach(
+  //     (item, i) => (item.textContent = `PREVIOUS - ${prevArr[i]}hrs`)
+  //   );
+  // });
+  // btnMonth.addEventListener("click", function (e) {
+  //   console.log(e.target.textContent);
+  //   // const clickedBtn = e.target.textContent;
+  //   // console.log(clickedBtn.toLowerCase());
+
+  //   const curArr = timeFrames.map((current) => current.monthly.current);
+  //   const prevArr = timeFrames.map((current) => current.monthly.previous);
+
+  //   currDiv.forEach((item, i) => (item.textContent = `${curArr[i]}hrs`));
+  //   prevDiv.forEach(
+  //     (item, i) => (item.textContent = `PREVIOUS - ${prevArr[i]}hrs`)
+  //   );
+  // });
 }
 timeTrackingData();
