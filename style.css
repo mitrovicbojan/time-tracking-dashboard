@@ -100,8 +100,7 @@ article a:hover {
 .work-card {
   width: 100%;
   background-color: var(--light-red-work);
-  overflow: hidden;
-  height: 60px;
+  height: 50px;
 }
 .work-icon {
   margin-left: 150px;
@@ -109,7 +108,14 @@ article a:hover {
 }
 .box {
   background-color: var(--dark-blue);
+  display: inline-block;
+  height: 80%;
+  width: 100%;
   border-radius: 10px;
+}
+.box:hover {
+  background-color: var(--desaturated-blue);
+  cursor: pointer;
 }
 .title {
   display: flex;
@@ -117,7 +123,6 @@ article a:hover {
   align-items: center;
   padding: 20px 20px;
   border-radius: 10px;
-  background-color: var(--dark-blue);
 }
 .subtitle {
   font-weight: 400;
@@ -128,9 +133,10 @@ article a:hover {
   cursor: pointer;
 }
 .prev {
-  display: block;
+  padding: 20px;
   text-align: left;
 }
 .curr {
   font-size: 36px;
+  font-weight: 400;
 }
