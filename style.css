@@ -99,19 +99,25 @@ article a:hover {
 }
 .work-card {
   width: 100%;
-  background-color: var(--light-red-work);
+  /* background-color: var(--light-red-work); */
   height: 50px;
+  display: inline-block;
 }
 .work-icon {
   margin-left: 150px;
   margin-top: -7px;
+  margin-bottom: -25px;
+  width: 80px;
+  height: 80px;
 }
 .box {
   background-color: var(--dark-blue);
   display: inline-block;
   height: 80%;
   width: 100%;
+
   border-radius: 10px;
+  height: 190px;
 }
 .box:hover {
   background-color: var(--desaturated-blue);
@@ -121,6 +127,7 @@ article a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   padding: 20px 20px;
   border-radius: 10px;
 }
@@ -133,10 +140,12 @@ article a:hover {
   cursor: pointer;
 }
 .prev {
-  padding: 20px;
-  text-align: left;
+  padding: 0 20px;
+
+  /* text-align: left; */
 }
 .curr {
-  font-size: 36px;
+  font-size: 46px;
   font-weight: 400;
+  margin-bottom: 20px;
 }
