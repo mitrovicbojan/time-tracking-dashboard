@@ -53,6 +53,7 @@ article a {
   margin-top: 15px;
   margin-bottom: 15px;
   color: var(--desaturated-blue);
+  width: 80px;
 }
 
 article a:hover {
@@ -93,9 +94,51 @@ article a:hover {
 .previous {
   color: rgb(255, 255, 255);
 }
+
 .card {
-  background-color: var(--light-red-work);
+  background: linear-gradient(
+    0deg,
+    rgba(28, 31, 74, 1) 40%,
+    rgba(255, 140, 102, 1) 60%
+  );
+  /* background-color: var(--light-red-work); */
   overflow: hidden;
+  border-radius: 10px;
+}
+.play {
+  background: linear-gradient(
+    0deg,
+    rgba(28, 31, 74, 1) 40%,
+    rgba(86, 194, 230, 1) 60%
+  );
+}
+.study {
+  background: linear-gradient(
+    0deg,
+    rgba(28, 31, 74, 1) 40%,
+    rgba(255, 92, 124, 1) 60%
+  );
+}
+.exercise {
+  background: linear-gradient(
+    0deg,
+    rgba(28, 31, 74, 1) 40%,
+    rgba(74, 207, 129, 1) 60%
+  );
+}
+.social {
+  background: linear-gradient(
+    0deg,
+    rgba(28, 31, 74, 1) 40%,
+    rgba(117, 54, 211, 1) 60%
+  );
+}
+.care {
+  background: linear-gradient(
+    0deg,
+    rgba(28, 31, 74, 1) 40%,
+    rgba(241, 198, 91, 1) 60%
+  );
 }
 .work-card {
   width: 100%;
@@ -115,9 +158,9 @@ article a:hover {
   display: inline-block;
   height: 80%;
   width: 100%;
-
   border-radius: 10px;
   height: 190px;
+  transition: ease-in 0.3s;
 }
 .box:hover {
   background-color: var(--desaturated-blue);
