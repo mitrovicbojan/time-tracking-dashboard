@@ -192,3 +192,25 @@ article a:hover {
   font-weight: 400;
   margin-bottom: 20px;
 }
+@media only screen and (max-width: 375px) {
+  .links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .links a {
+    padding: 0;
+  }
+  .card {
+    height: 180px;
+  }
+  .prev {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .curr {
+    font-size: 25px;
+    margin: 0;
+  }
+}
